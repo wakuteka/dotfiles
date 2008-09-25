@@ -1,0 +1,11 @@
+" 0.4 (created: 2008/08/15 21:58:26)
+" Mappings
+
+" Options
+
+" Abbreviations
+
+source! ~/.muttatorrc.local
+
+" vim: set ft=vimperator:
+set guioptions=mTf
