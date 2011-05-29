@@ -1,0 +1,112 @@
+# 
+# emboss.default for Knoppix for bio (KNOB)
+# 
+# written by Itoshi NIKAIDO <dritoshi at gmail dot com>
+#
+
+SET emboss_data /usr/share/EMBOSS/data
+
+########################
+### access method SRSWWW
+########################
+
+DB embl [ 
+  type: N 
+  format: embl 
+  method: srswww
+  dbalias: embl
+  fields: "sv des org key"
+  url: http://srs.ebi.ac.uk/cgi-bin/wgetz
+  comment: "The EMBL nucleotide sequence database constitutes Europes primary nucleotide sequence resource. The database is produced in an international collaboration with GenBank (USA) and the DNA Database of Japan (DDBJ)."
+]
+
+DB refseq [
+  type: N 
+  format: genbank
+  method: srswww
+  dbalias: REFSEQ 
+  fields: "sv des org key"
+  url: http://srs.ebi.ac.uk/cgi-bin/wgetz
+  comment: "Database providing non-redundant curated data representing knowledge of known genes"
+]
+
+DB swall [ 
+  type: P 
+  format: swiss
+  method: srswww
+  dbalias: SWALL
+  fields: "sv des org key"
+  url: http://srs.ebi.ac.uk/cgi-bin/wgetz
+  comment: "A combined database of Swiss-Prot, SPTREMBL and TREMBLNEW. Does not contain REMTREMBL. "
+]
+
+DB swissprot [ 
+  type: P 
+  format: swiss
+  method: srswww
+  dbalias: SWISSPROT
+  fields: "sv des org key"
+  url: http://srs.ebi.ac.uk/cgi-bin/wgetz
+  comment: "Database of protein sequences produced collaboratively by the Swiss Institute for Bioinformatics (SIB) and the European Bioinformatics Institute (EBI). "
+]
+
+DB SpTrEMBL [ 
+  type: P 
+  format: embl
+  method: srswww
+  dbalias: SPTREMBL
+  fields: "sv des org key"
+  url: http://srs.ebi.ac.uk/cgi-bin/wgetz
+  comment: "Contains the translations of all coding sequences present in the EMBL sequence database not yet integrated in SWISS-PROT "
+]
+
+DB pir [ 
+  type: P 
+  format: pir
+  method: srswww
+  dbalias: PIR
+  fields: "sv des org key"
+  url: http://srs.ebi.ac.uk/cgi-bin/wgetz
+  comment: "Protein Identification Resource. "
+]
+
+DB refseqp [ 
+  type: P 
+  format: genbank
+  method: srswww
+  dbalias: REFSEQP
+  fields: "sv des org key"
+  url: http://srs.ebi.ac.uk/cgi-bin/wgetz
+  comment: "Database of protein information from REFSEQ "
+]
+
+DB DDBJRELEASE [ 
+  type: N 
+  format: genbank
+  method: srswww
+  url: http://srs.ddbj.nig.ac.jp/cgi-bin/wgetz
+  dbalias: DDBJRELEASE
+  fields: "sv des org key"
+  comment: "DDBJRELEASE IDs" 
+]
+
+DB DDBJNEW [ 
+  type: N 
+  format: genbank
+  method: srswww
+  url: http://srs.ddbj.nig.ac.jp/cgi-bin/wgetz
+  dbalias: DDBJNEW
+  fields: "sv des org key"
+  comment: "DDBJNEW IDs" 
+]
+
+DB GENBANK [
+  type: N 
+  format: genbank
+  method: url
+  url: "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=nucleotide&rettype=gb&retmode=text&id=%s"
+  dbalias: GENBANKN
+  comment: "NCBI IDs"
+]
+
+# SET emboss_proxy "10.3.1.1:8080"

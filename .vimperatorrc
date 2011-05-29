@@ -1,0 +1,34 @@
+" 2.0pre (created: 2008/08/29 07:30:07)
+" Mappings
+noremap h gT
+noremap l gt
+map <C-h> H
+map <C-l> L
+map <BS> H
+
+let mapleader="<space>""{{{1
+noremap <space>x :<C-u>quit!<Return>
+noremap <space>r :<C-u>restart<Return>
+"}}}
+"
+noremap A :hb<space>[*]<Return>
+noremap a :hb<space>
+noremap w :open<space>tw<cr>
+qmark t http://twitter.com/
+map <C-k> <Esc>
+noremap f null
+noremap F null
+noremap ; null
+
+" behave like vim explorer mode 
+noremap - gu
+
+" Options
+set guioptions=T
+":pref means open about:config
+set! browser.contentHandlers.auto.application/vnd.mozilla.maybe.feed = http://reader.livedoor.com/subscribe/?url=%s
+" Abbreviations
+
+source! ~/.vimperatorrc.local
+
+" vim: set ft=vim
